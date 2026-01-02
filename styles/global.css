@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@font-face {
+  font-family: "Aeonik Trial";
+  src: url("/fonts/aeoniktrial-light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aeonik Trial";
+  src: url("/fonts/aeoniktrial-lightitalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Aeonik Trial";
+  src: url("/fonts/aeoniktrial-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aeonik Trial";
+  src: url("/fonts/aeoniktrial-regularitalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Aeonik Trial";
+  src: url("/fonts/aeoniktrial-bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aeonik Trial";
+  src: url("/fonts/aeoniktrial-bolditalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@theme {
+  /* Light */
+  --font-aeonik-light: "Aeonik Trial", sans-serif;
+  --font-aeonik-light-italic: "Aeonik Trial", sans-serif;
+
+  /* Regular */
+  --font-aeonik-regular: "Aeonik Trial", sans-serif;
+  --font-aeonik-regular-italic: "Aeonik Trial", sans-serif;
+
+  /* Bold */
+  --font-aeonik-bold: "Aeonik Trial", sans-serif;
+  --font-aeonik-bold-italic: "Aeonik Trial", sans-serif;
+}
