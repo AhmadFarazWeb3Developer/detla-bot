@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-function HeroSection() {
+const HeroSection = () => {
   return (
     <section className="min-h-[90vh] flex flex-col items-center justify-center bg-[#0a0d0c] text-white px-6">
       <div className="relative mb-8">
@@ -34,5 +34,5 @@ function HeroSection() {
       </div>
     </section>
   );
-}
+};
 export default HeroSection;
