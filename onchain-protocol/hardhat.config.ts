@@ -9,6 +9,8 @@ export default defineConfig({
       { version: "0.6.6" },
       { version: "0.8.13" },
       { version: "0.8.20" },
+      { version: "0.8.0" },
+      { version: "0.8.28" },
     ],
   },
   networks: {
@@ -30,5 +32,6 @@ export default defineConfig({
 
   paths: {
     sources: "contracts",
+    tests: "tests",
   },
 });
