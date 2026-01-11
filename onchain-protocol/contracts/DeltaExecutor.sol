@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.28;
 
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+pragma solidity >=0.5.0 <0.9.0;
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract DeltaExecutor {
     address public bot;
@@ -28,7 +29,7 @@ contract DeltaExecutor {
         address _profitReceiver,
         uint256 _maxTrade,
         uint256 _minProfit
-    ) {
+    ) public {
         owner = msg.sender;
         bot = _bot;
         profitReceiver = _profitReceiver;
