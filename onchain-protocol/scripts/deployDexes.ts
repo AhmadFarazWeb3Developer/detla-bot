@@ -10,54 +10,54 @@ const deployDexes = async () => {
 
   //  DEX A contracts ---------------------------------------
   const DexA_Factory = await ethers.getContractFactory(
-    "contracts/DEX-A/UniswapV2Factory.sol:UniswapV2Factory"
+    "contracts/DEX-A/UniswapV2Factory.sol:UniswapV2Factory",
   );
 
   const DexA_ERC20 = await ethers.getContractFactory(
-    "contracts/DEX-A/UniswapV2ERC20.sol:UniswapV2ERC20"
+    "contracts/DEX-A/UniswapV2ERC20.sol:UniswapV2ERC20",
   );
 
   const DexA_Pair = await ethers.getContractFactory(
-    "contracts/DEX-A/UniswapV2Pair.sol:UniswapV2Pair"
+    "contracts/DEX-A/UniswapV2Pair.sol:UniswapV2Pair",
   );
 
   const DexA_Router = await ethers.getContractFactory(
-    "contracts/DEX-A/mocks/router/UniswapV2Router02Mock.sol:UniswapV2Router02Mock"
+    "contracts/DEX-A/mocks/router/UniswapV2Router02Mock.sol:UniswapV2Router02Mock",
   );
 
   const a_AvalancheMock = await ethers.getContractFactory(
-    "contracts/DEX-A/mocks/tokens/AvalancheMock.sol:AvalancheMock"
+    "contracts/DEX-A/mocks/tokens/AvalancheMock.sol:AvalancheMock",
   );
 
   const a_BnbMock = await ethers.getContractFactory(
-    "contracts/DEX-A/mocks/tokens/BnbMock.sol:BnbMock"
+    "contracts/DEX-A/mocks/tokens/BnbMock.sol:BnbMock",
   );
 
   const a_ChainlinkMock = await ethers.getContractFactory(
-    "contracts/DEX-A/mocks/tokens/ChainlinkMock.sol:ChainlinkMock"
+    "contracts/DEX-A/mocks/tokens/ChainlinkMock.sol:ChainlinkMock",
   );
   const a_DaiMock = await ethers.getContractFactory(
-    "contracts/DEX-A/mocks/tokens/DaiMock.sol:DaiMock"
+    "contracts/DEX-A/mocks/tokens/DaiMock.sol:DaiMock",
   );
   const a_PolkadotMock = await ethers.getContractFactory(
-    "contracts/DEX-A/mocks/tokens/PolkadotMock.sol:PolkadotMock"
+    "contracts/DEX-A/mocks/tokens/PolkadotMock.sol:PolkadotMock",
   );
   const a_PolygonMock = await ethers.getContractFactory(
-    "contracts/DEX-A/mocks/tokens/PolygonMock.sol:PolygonMock"
+    "contracts/DEX-A/mocks/tokens/PolygonMock.sol:PolygonMock",
   );
 
   const a_UsdcMock = await ethers.getContractFactory(
-    "contracts/DEX-A/mocks/tokens/UsdcMock.sol:UsdcMock"
+    "contracts/DEX-A/mocks/tokens/UsdcMock.sol:UsdcMock",
   );
   const a_UsdtMock = await ethers.getContractFactory(
-    "contracts/DEX-A/mocks/tokens/UsdtMock.sol:UsdtMock"
+    "contracts/DEX-A/mocks/tokens/UsdtMock.sol:UsdtMock",
   );
   const a_WethMock = await ethers.getContractFactory(
-    "contracts/DEX-A/mocks/tokens/WethMock.sol:WethMock"
+    "contracts/DEX-A/mocks/tokens/WethMock.sol:WethMock",
   );
 
   const dexA_factory = await DexA_Factory.deploy(
-    "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+    "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
   );
 
   await dexA_factory.waitForDeployment();
@@ -97,62 +97,62 @@ const deployDexes = async () => {
 
   const dexA_router = await DexA_Router.deploy(
     dexA_factory.target,
-    a_wethMock.target
+    a_wethMock.target,
   );
 
   await dexA_router.waitForDeployment();
 
   // DEX B contracts ---------------------------------------
   const DexB_Factory = await ethers.getContractFactory(
-    "contracts/DEX-B/UniswapV2Factory.sol:UniswapV2Factory"
+    "contracts/DEX-B/UniswapV2Factory.sol:UniswapV2Factory",
   );
 
   const DexB_ERC20 = await ethers.getContractFactory(
-    "contracts/DEX-B/UniswapV2ERC20.sol:UniswapV2ERC20"
+    "contracts/DEX-B/UniswapV2ERC20.sol:UniswapV2ERC20",
   );
 
   const DexB_Pair = await ethers.getContractFactory(
-    "contracts/DEX-B/UniswapV2Pair.sol:UniswapV2Pair"
+    "contracts/DEX-B/UniswapV2Pair.sol:UniswapV2Pair",
   );
 
   const DexB_Router = await ethers.getContractFactory(
-    "contracts/DEX-B/mocks/router/UniswapV2Router02Mock.sol:UniswapV2Router02Mock"
+    "contracts/DEX-B/mocks/router/UniswapV2Router02Mock.sol:UniswapV2Router02Mock",
   );
 
   const b_AvalancheMock = await ethers.getContractFactory(
-    "contracts/DEX-B/mocks/tokens/AvalancheMock.sol:AvalancheMock"
+    "contracts/DEX-B/mocks/tokens/AvalancheMock.sol:AvalancheMock",
   );
 
   const b_BnbMock = await ethers.getContractFactory(
-    "contracts/DEX-B/mocks/tokens/BnbMock.sol:BnbMock"
+    "contracts/DEX-B/mocks/tokens/BnbMock.sol:BnbMock",
   );
 
   const b_ChainlinkMock = await ethers.getContractFactory(
-    "contracts/DEX-B/mocks/tokens/ChainlinkMock.sol:ChainlinkMock"
+    "contracts/DEX-B/mocks/tokens/ChainlinkMock.sol:ChainlinkMock",
   );
   const b_DaiMock = await ethers.getContractFactory(
-    "contracts/DEX-B/mocks/tokens/DaiMock.sol:DaiMock"
+    "contracts/DEX-B/mocks/tokens/DaiMock.sol:DaiMock",
   );
   const b_PolkadotMock = await ethers.getContractFactory(
-    "contracts/DEX-B/mocks/tokens/PolkadotMock.sol:PolkadotMock"
+    "contracts/DEX-B/mocks/tokens/PolkadotMock.sol:PolkadotMock",
   );
   const b_PolygonMock = await ethers.getContractFactory(
-    "contracts/DEX-B/mocks/tokens/PolygonMock.sol:PolygonMock"
+    "contracts/DEX-B/mocks/tokens/PolygonMock.sol:PolygonMock",
   );
 
   const b_UsdcMock = await ethers.getContractFactory(
-    "contracts/DEX-B/mocks/tokens/UsdcMock.sol:UsdcMock"
+    "contracts/DEX-B/mocks/tokens/UsdcMock.sol:UsdcMock",
   );
 
   const b_UsdtMock = await ethers.getContractFactory(
-    "contracts/DEX-B/mocks/tokens/UsdtMock.sol:UsdtMock"
+    "contracts/DEX-B/mocks/tokens/UsdtMock.sol:UsdtMock",
   );
   const b_WethMock = await ethers.getContractFactory(
-    "contracts/DEX-B/mocks/tokens/WethMock.sol:WethMock"
+    "contracts/DEX-B/mocks/tokens/WethMock.sol:WethMock",
   );
 
   const dexB_factory = await DexB_Factory.deploy(
-    "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+    "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
   );
   await dexB_factory.waitForDeployment();
 
@@ -191,7 +191,7 @@ const deployDexes = async () => {
 
   const dexB_router = await DexB_Router.deploy(
     dexB_factory.target,
-    b_wethMock.target
+    b_wethMock.target,
   );
 
   // Store deployed contract addresses ---------------------------
@@ -243,7 +243,7 @@ const deployDexes = async () => {
       path,
       JSON.stringify({
         deployment,
-      })
+      }),
     );
   }
 };
