@@ -1,0 +1,26 @@
+let say
+
+DEX A has 1 btc for 2000 USD and 
+
+DEX B has 1 btc for 2010 USD 
+
+
+
+so i am getting 10 USD profit on DEX B 
+
+
+So buying 1 btc on DEX A and selling it on DEX B
+
+
+
+so how will i do it ?
+
+1) sending my USD to executor 
+2) approve buying router of DEX A to make swap
+3) receving the 1 btc 
+4) approve the selling router of DEX B to make the swap again
+5) receive the USD with profit, 
+6) approve the user and  send to user wallet from executor 
+
+
+

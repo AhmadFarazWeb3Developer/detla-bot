@@ -47,13 +47,25 @@ contract DeltaExecutor {
         minProfit = _minProfit;
     }
 
+    /*
+
+Lets say I want to trade USDT for WETH
+and there are two routers: RouterA and RouterB
+
+on one router i am getting the more USDT for WETH
+on the other router i am getting less USDT for WETH
+
+so i buy on buy on the less one and sell on the more one
+
+ */
+
     function executeTrade(
         address routerSell, // i am selling on this router
         address routerBuy, // i am buying on this router
-        address tokenIn, // token I am selling
-        address tokenOut, // token I am buying
-        uint256 amountIn, // amount I am selling
-        uint256 minOut // min amount I want to receive
+        address tokenIn, // USDT I am selling
+        address tokenOut, // WETH I am buying
+        uint256 amountIn, // USDT amount I am selling
+        uint256 minOut // WETH min amount I want to receive
     ) external onlyBot {
         require(allowedRouters[routerBuy], "ROUTER_NOT_ALLOWED");
         require(allowedRouters[routerSell], "ROUTER_NOT_ALLOWED");
@@ -63,10 +75,10 @@ contract DeltaExecutor {
 
         uint256 deadline = block.timestamp + 300;
 
-        // Approve routerBuy to spend tokenIn
+        // Approve routerBuy to spend USDT
         IERC20(tokenIn).approve(routerBuy, amountIn);
 
-        // Swap on routerBuy: tokenIn -> tokenOut
+        // Swap on routerBuy: USDT -> WETH
         address[] memory pathBuy = new address[](2);
         pathBuy[0] = tokenIn;
         pathBuy[1] = tokenOut;
@@ -78,13 +90,13 @@ contract DeltaExecutor {
             deadline
         );
 
-        // Get the amount of tokenOut received
+        // Get the amount of WETH received
         uint256 tokenOutBalance = IERC20(tokenOut).balanceOf(address(this));
 
-        // Approve routerSell to spend tokenOut
+        // Approve routerSell to spend WETH
         IERC20(tokenOut).approve(routerSell, tokenOutBalance);
 
-        // Swap on routerSell: tokenOut -> tokenIn
+        // Swap on routerSell: WETH -> USDT
         address[] memory pathSell = new address[](2);
         pathSell[0] = tokenOut;
         pathSell[1] = tokenIn;

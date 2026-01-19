@@ -1,3 +1,5 @@
+"use client";
+
 import { Bot, Brain } from "lucide-react";
 import { RiExchangeFundsLine } from "react-icons/ri";
 import { VscGraphLine } from "react-icons/vsc";

@@ -51,7 +51,7 @@ describe("DeltaExecutor", () => {
             100,
             90,
           ),
-      ).to.be.reverted;
+      ).to.be.revertedWith("NOT_BOT");
     });
 
     it("should allow bot to call executeTrade", async () => {
@@ -68,7 +68,42 @@ describe("DeltaExecutor", () => {
             100,
             90,
           ),
-      ).to.not.be.reverted;
+      ).not.to.be.revertedWithoutReason(ethers);
+    });
+  });
+
+  describe("Withdrawals", () => {
+    it("should allow owner to withdraw tokens", async () => {
+      const { deltaExecutor, owner } = await deployFixture();
+
+      await expect(
+        deltaExecutor.connect(owner).withdraw(ethers.ZeroAddress),
+      ).not.to.be.revertedWithoutReason(ethers);
+    });
+
+    it("should revert when non-owner tries to withdraw tokens", async () => {
+      const { deltaExecutor, attacker } = await deployFixture();
+      await expect(
+        deltaExecutor.connect(attacker).withdraw(ethers.ZeroAddress),
+      ).to.be.revertedWith("NOT_OWNER");
+    });
+  });
+
+  describe("Router management", () => {
+    it("should allow owner to set allowed routers", async () => {
+      const { deltaExecutor, owner } = await deployFixture();
+      await expect(
+        deltaExecutor.connect(owner).setAllowedRouter(ethers.ZeroAddress, true),
+      ).not.to.be.revertedWithoutReason(ethers);
+    });
+
+    it("should revert when non-owner tries to set allowed routers", async () => {
+      const { deltaExecutor, attacker } = await deployFixture();
+      await expect(
+        deltaExecutor
+          .connect(attacker)
+          .setAllowedRouter(ethers.ZeroAddress, true),
+      ).to.be.revertedWith("NOT_OWNER");
     });
   });
 });
