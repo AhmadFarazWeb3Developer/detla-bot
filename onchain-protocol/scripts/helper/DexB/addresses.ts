@@ -1,20 +1,21 @@
 import deployment from "../../../deployments/deployedDexes.json";
 
-const DEX_A_ADDRESS = deployment.deployment.dexA;
-const DexB_addresses = {
-  a_factory: DEX_A_ADDRESS.a_factory,
-  a_erc20: DEX_A_ADDRESS.a_erc20,
-  a_pair: DEX_A_ADDRESS.a_pair,
-  a_router: DEX_A_ADDRESS.a_router,
+const DEX_B_ADDRESS = deployment.deployment.dexB;
 
-  a_avalanche: DEX_A_ADDRESS.a_avalanche,
-  a_bnb: DEX_A_ADDRESS.a_bnb,
-  a_chainlink: DEX_A_ADDRESS.a_chainlink,
-  a_dai: DEX_A_ADDRESS.a_dai,
-  a_polkadot: DEX_A_ADDRESS.a_polkadot,
-  a_polygon: DEX_A_ADDRESS.a_polygon,
-  a_usdc: DEX_A_ADDRESS.a_usdc,
-  a_usdt: DEX_A_ADDRESS.a_usdt,
-  a_weth: DEX_A_ADDRESS.a_weth,
+const DexB_addresses = {
+  b_factory: DEX_B_ADDRESS.b_factory,
+  b_erc20: DEX_B_ADDRESS.b_erc20,
+  b_pair: DEX_B_ADDRESS.b_pair,
+  b_router: DEX_B_ADDRESS.b_router,
+
+  b_avalanche: DEX_B_ADDRESS.b_avalanche,
+  b_bnb: DEX_B_ADDRESS.b_bnb,
+  b_chainlink: DEX_B_ADDRESS.b_chainlink,
+  b_dai: DEX_B_ADDRESS.b_dai,
+  b_polkadot: DEX_B_ADDRESS.b_polkadot,
+  b_polygon: DEX_B_ADDRESS.b_polygon,
+  b_usdc: DEX_B_ADDRESS.b_usdc,
+  b_usdt: DEX_B_ADDRESS.b_usdt,
+  b_weth: DEX_B_ADDRESS.b_weth,
 };
 export default DexB_addresses;
