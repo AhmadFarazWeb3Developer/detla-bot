@@ -13,7 +13,7 @@ import UsdtMock from "../../../artifacts/contracts/DEX-B/mocks/tokens/UsdtMock.s
 import WethMock from "../../../artifacts/contracts/DEX-B/mocks/tokens/WethMock.sol/WethMock.json";
 import PolygonMock from "../../../artifacts/contracts/DEX-B/mocks/tokens/PolygonMock.sol/PolygonMock.json";
 
-const abis = {
+const DexB_abis = {
   UniswapV2FactoryAbi: UniswapV2Factory.abi,
   UniswapV2PairAbi: UniswapV2Pair.abi,
   UniswapV2ERC20Abi: UniswapV2ERC20.abi,
@@ -28,4 +28,4 @@ const abis = {
   WethMockAbi: WethMock.abi,
   PolygonMockAbi: PolygonMock.abi,
 };
-export default abis;
+export default DexB_abis;
