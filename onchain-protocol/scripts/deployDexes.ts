@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, writeFile, writeFileSync } from "fs";
+import { existsSync, mkdirSync, writeFileSync } from "fs";
 import { network } from "hardhat";
 
 const { ethers } = await network.connect({

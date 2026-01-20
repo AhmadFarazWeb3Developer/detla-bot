@@ -87,24 +87,7 @@ const deposit_Dex_B_Tokens = async () => {
     tx9.wait(),
   ]);
 
-  const routerB = new ethers.Contract(
-    DexB_addresses.b_router,
-    abis.UniswapV2Router02MockAbi,
-    deployer,
-  );
-
-  await b_avalanche.approve(routerB.target, depositAmount);
-  await b_bnb.approve(routerB.target, depositAmount);
-  await b_chainlink.approve(routerB.target, depositAmount);
-  await b_dai.approve(routerB.target, depositAmount);
-  await b_polkadot.approve(routerB.target, depositAmount);
-  await b_polygon.approve(routerB.target, depositAmount);
-  await b_usdc.approve(routerB.target, depositAmount);
-  await b_usdt.approve(routerB.target, depositAmount);
-  await b_weth.approve(routerB.target, depositAmount);
-
   console.log("Dex B tokens deposited successfully");
-  console.log("Router B appoved successfully");
 };
 
 deposit_Dex_B_Tokens().catch((err) => {

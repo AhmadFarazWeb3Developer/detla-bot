@@ -85,22 +85,7 @@ const deposit_Dex_A_Tokens = async () => {
     tx8.wait(),
     tx9.wait(),
   ]);
-
-  const routerA = new ethers.Contract(
-    DexA_addresses.a_router,
-    abis.UniswapV2Router02MockAbi,
-    deployer,
-  );
-
-  await a_avalanche.approve(routerA.target, depositAmount);
-  await a_bnb.approve(routerA.target, depositAmount);
-  await a_chainlink.approve(routerA.target, depositAmount);
-  await a_dai.approve(routerA.target, depositAmount);
-  await a_polkadot.approve(routerA.target, depositAmount);
-  await a_polygon.approve(routerA.target, depositAmount);
-  await a_usdc.approve(routerA.target, depositAmount);
-  await a_usdt.approve(routerA.target, depositAmount);
-  await a_weth.approve(routerA.target, depositAmount);
+  console.log("Deposited Dex A tokens to deployer address");
 };
 
 deposit_Dex_A_Tokens().catch((err) => {
