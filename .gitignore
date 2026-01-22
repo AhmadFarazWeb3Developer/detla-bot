@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# NEVER COMMIT KEY SCRIPTS
+
+/bot/
+/encryption/encrypt*.js
