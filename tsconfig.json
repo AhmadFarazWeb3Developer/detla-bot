@@ -30,7 +30,8 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    "bot/encryption/encrypt.js"
+    "bot/encryption/encrypt.js",
+    "bot/tsconfig.json"
   ],
   "exclude": ["node_modules"]
 }

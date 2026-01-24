@@ -5,6 +5,7 @@ import tradeOnLiquidity from "./trader.js";
 import abis from "../onchain-protocol/scripts/helper/abis.js";
 import DexA_addresses from "../onchain-protocol/scripts/helper/DexA/addresses.js";
 import readline from "readline";
+
 import loadPrivateKey from "./encryption/decrypt.js";
 
 const entryPoint = async () => {

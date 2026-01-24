@@ -29,5 +29,21 @@
     "tailwindcss": "^4.1.18",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
-  }
+  },
+  "description": "Developing a bot which allow me to read the different Dexes, when ever it see any difference then it makes the trade for swap and get the profit.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhmadFarazWeb3Developer/detla-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AhmadFarazWeb3Developer/detla-bot/issues"
+  },
+  "homepage": "https://github.com/AhmadFarazWeb3Developer/detla-bot#readme"
 }

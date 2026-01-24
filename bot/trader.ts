@@ -1,6 +1,6 @@
-import { Wallet, Contract } from "ethers";
-import abis from "../onchain-protocol/scripts/helper/abis.js";
-// import { CONFIG } from "./config.js";
+// import { Wallet, Contract } from "ethers";
+// import abis from "../onchain-protocol/scripts/helper/abis.js";
+// // import { CONFIG } from "./config.js";
 
 const tradeOnLiquidity = async ({ router, pairAddress, signer }: any) => {
   console.log("Executing trade on:", pairAddress);
