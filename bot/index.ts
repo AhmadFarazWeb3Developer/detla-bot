@@ -8,6 +8,20 @@ import readline from "readline";
 
 import loadPrivateKey from "./encryption/decrypt.js";
 
+const ask = (question: string) => {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  return new Promise((resolve) => {
+    rl.question(question, (ans: string) => {
+      rl.close();
+      resolve(ans);
+    });
+  });
+};
+
 const entryPoint = async () => {
   const password = await ask("Enter your encryption password: ");
 
@@ -42,17 +56,3 @@ entryPoint().catch((error: any) => {
   console.error(error);
   process.exitCode = 1;
 });
-
-const ask = (question: string) => {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-
-  return new Promise((resolve) => {
-    rl.question(question, (ans: string) => {
-      rl.close();
-      resolve(ans);
-    });
-  });
-};
