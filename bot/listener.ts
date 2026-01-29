@@ -1,14 +1,14 @@
-import { Contract } from "ethers";
-import provider from "./provider.js";
-import abis from "../onchain-protocol/scripts/helper/abis.js";
+// import { Contract } from "ethers";
+// import provider from "./provider.js";
+// import abis from "../onchain-protocol/scripts/helper/abis.js";
 
-const listenToPair = (pairAddress: string, tradeOnLiquidity: Function) => {
-  const pair = new Contract(pairAddress, abis.UniswapV2PairAbi, provider);
+// const listenToPair = (pairAddress: string, tradeOnLiquidity: Function) => {
+//   const pair = new Contract(pairAddress, abis.UniswapV2PairAbi, provider);
 
-  pair.on("Mint", async (sender, amount0, amount1) => {
-    console.log("Liquidity added:", pairAddress);
-    await tradeOnLiquidity(pairAddress, amount0, amount1);
-  });
-};
+//   pair.on("Mint", async (sender, amount0, amount1) => {
+//     console.log("Liquidity added:", pairAddress);
+//     await tradeOnLiquidity(pairAddress, amount0, amount1);
+//   });
+// };
 
-export default listenToPair;
+// export default listenToPair;
